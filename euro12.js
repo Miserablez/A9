@@ -1,11 +1,3 @@
-// 白色 #ffffffff
-// 红色 #fffb1264
-// 继续 绿色 #ffc3fb12
-// 推荐性能分 绿色 #ffc3fc0f
-// 广告黑 #ff080906
-// 代币蓝 #ff0009ff
-// 积分黄 #ffffc600
-
 //选择可用的车,第一列第一张编号为1,第一列第二张为2,第二列第一张为3,依次递增.可根据自己需求修改
 //填写车的编号,1920*1080上最多6张车循环,按填写先后顺序用车
 const cars = [1, 2, 3, 4, 5, 6];
@@ -52,13 +44,6 @@ var robot = new Robot();
 
 //1920*1080分辨率
 var profileA = {
-
-    // 最上方代币图标
-    token: { x: 921 , y: 42 },
-
-    // 最上方积分图标
-    credit: { x: 1206 , y: 42 },
-
     //生涯,开始,继续
     goldenPoint: { x: 1500, y: 1000 },
 
@@ -70,6 +55,7 @@ var profileA = {
 
     swipeScreen: function () {
         for (i = 0; i < 4; i++) {
+			sleep(300);
             robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
             sleep(200);
         }
@@ -84,56 +70,43 @@ var profileA = {
     //firstCar
     firstCar: { x: 555, y: 616 },
 
-    distance: { x: 519, y: 365 },
-
-    // 升级按钮
-    upgrade: { x: 960, y: 900 }
+    distance: { x: 519, y: 365 }
 
 }
 
 //2160*1080分辨率
 var profileB = {
-
-    // 最上方代币图标
-    token: { x: 1035 , y: 48 },
-
-    // 最上方积分图标
-    credit: { x: 1350 , y: 48 },
-
-    // 生涯,开始,继续
+    //生涯,开始,继续
     goldenPoint: { x: 1700, y: 1000 },
 
-    // 生涯百分比
+    //生涯百分比
     careerPercent: { x: 1776, y: 1023 },
 
-    // euro
+    //euro
     euro: { x: 1700, y: 280 },
 
     swipeScreen: function () {
         for (i = 0; i < 4; i++) {
+			sleep(300);
             robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
             sleep(200);
         }
     },
 
-    // 第12关
+    //12
     block12: { x: 765, y: 306 },
 
-    // 推荐性能分
+    //推荐性能分
     recommendedPoints: { x: 2000, y: 860 },
 
-    // 第一辆车
+    //firstCar
     firstCar: { x: 565, y: 630 },
 
-    // 车辆间距
-    distance: { x: 513, y: 359 },
-
-    // 升级按钮
-    upgrade: { x: 1080, y: 930 }
+    distance: { x: 513, y: 359 }
 
 }
 
-/* 2220*1080分辨率
+//2220*1080分辨率
 var profileC = {
     //生涯,开始,继续
     goldenPoint: { x: 1700, y: 980 },
@@ -146,6 +119,7 @@ var profileC = {
 
     swipeScreen: function () {
         for (i = 0; i < 4; i++) {
+			sleep(300);
             robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
             sleep(200);
         }
@@ -160,78 +134,175 @@ var profileC = {
     //firstCar
     firstCar: { x: 565, y: 630 },
 
+    distance: { x: 519, y: 359 }
+
+}
+
+
+//2280*1080分辨率
+var profileG = {
+    //生涯,开始,继续
+    goldenPoint: { x: 1746, y: 980 },
+
+    //生涯百分比
+    careerPercent: { x: 1889, y: 1020 },
+
+    //euro
+    euro: { x: 1529, y: 276 },
+
+    swipeScreen: function () {
+        for (i = 0; i < 4; i++) {
+			sleep(300);
+            robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
+            sleep(200);
+        }
+    },
+
+    //12
+    block12: { x: 814, y: 180 },
+
+    //推荐性能分
+    recommendedPoints: { x: 2126, y: 864 },
+
+    //firstCar
+    firstCar: { x: 576, y: 630 },
+
+    distance: { x: 533, y: 359 }
+
+}
+
+
+//2248*1080分辨率forMi8.
+var profileD = {
+    //生涯,开始,继续
+    goldenPoint: { x: 1738, y: 980 },
+
+    //生涯百分比
+    careerPercent: { x: 1863, y: 1020 },
+
+    //euro
+    euro: { x: 1507, y: 276 },
+
+    swipeScreen: function () {
+        for (i = 0; i < 4; i++) {
+            robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
+            sleep(200);
+        }
+    },
+
+    //12
+    block12: { x: 801, y: 180 },
+
+    //推荐性能分
+    recommendedPoints: { x: 2097, y: 864 },
+
+    //firstCar
+    firstCar: { x: 572, y: 630 },
+
     distance: { x: 513, y: 359 }
 
 }
-*/
+//2244*1080分辨率forMi8.
+var profileE = {
+    //生涯,开始,继续
+    goldenPoint: { x: 1719, y: 980 },
 
-// //1280*720分辨率
-// //720p分辨率可以通过1008p缩放计算出来
-// var profileD = {
-//     //生涯,开始,继续
-//     goldenPoint: { x: 980, y: 650 },
+    //生涯百分比
+    careerPercent: { x: 1859, y: 1020 },
 
-//     //生涯百分比
-//     careerPercent: { x: 1079.3, y: 693 },
+    //euro
+    euro: { x: 1504, y: 276 },
 
-//     //euro
-//     euro: { x: 420, y: 184 },
+    swipeScreen: function () {
+        for (i = 0; i < 4; i++) {
+            robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
+            sleep(200);
+        }
+    },
 
-//     swipeScreen: function () {
-//         for (i = 0; i < 2; i++) {
-//             robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
-//             sleep(200);
-//         }
-//     },
+    //12
+    block12: { x: 799, y: 180 },
 
-//     //12
-//     block12: { x: 450, y: 100 },
+    //推荐性能分
+    recommendedPoints: { x: 2094, y: 864 },
 
-//     //推荐性能分
-//     recommendedPoints: { x: 1200, y: 588 },
+    //firstCar
+    firstCar: { x: 571, y: 630 },
 
-//     //firstCar
-//     firstCar: { x: 370, y: 410.6 },
+    distance: { x: 525, y: 359 }
 
-//     distance: { x: 346, y: 243.3 }
+}
+//1280*720分辨率
+//720p分辨率可以通过1080p缩放计算出来
+ var profileF = {
+     //生涯,开始,继续
+     goldenPoint: { x: 980, y: 650 },
 
-// }
+     //生涯百分比
+     careerPercent: { x: 1078, y: 693 },
+
+     //euro
+     euro: { x: 420, y: 184 },
+
+     swipeScreen: function () {
+         for (i = 0; i < 2; i++) {
+			 sleep(300);
+             robot.swipe(height * 2 / 3, 150, height * 2 / 3, 900, 400);
+             sleep(200);
+         }
+     },
+
+     //12
+     block12: { x: 450, y: 100 },
+
+     //推荐性能分
+     recommendedPoints: { x: 1200, y: 588 },
+
+     //firstCar
+     firstCar: { x: 370, y: 411 },
+
+     distance: { x: 346, y: 243 }
+
+ }
 
 var profile;
 if (height === 1920 && width == 1080) {
     profile = profileA;
-} 
-else if (height === 2160 && width === 1080) {
+} else if (height === 2160 && width === 1080) {
     profile = profileB;
-} 
-/*else if (height === 2220 && width === 1080) {
+} else if (height === 2220 && width === 1080) {
     profile = profileC;
-}*/
-// else if (height === 1280 && width === 720) {
-//     profile = profileD;
-// } 
+} else if (height === 2248 && width === 1080) {
+    profile = profileD;
+} else if (height === 2244 && width === 1080) {
+    profile = profileE;
+} else if (height === 1280 && width === 720) {
+    profile = profileF;
+} else if (height === 2280 && width === 1080) {
+    profile = profileG;
+}
+
 else {
     toast("该分辨率暂未支持,程序结束");
     exit();
 }
 
-main();
+mainEntrence();
 
-function main() {
+// 程序主入口
+function mainEntrence() {
     sleep(2000);
     toast("3秒后将开始运行程序,请迅速切换至游戏主界面");
     sleep(3000);
     toast("开局可能会弹广告,请自己手动关掉,直至保证程序正常选关为止");
     deviceInfo();
     eventListener();
-    // sleep(5000);
 
     // 选关卡
     beforeRun();
-    
-    for (var counter_loop = 0;;counter_loop++) {
+    while (true) {
         // 运行主函数
-        loop(counter_loop);
+        main();
     }
 }
 
@@ -253,15 +324,6 @@ function eventListener() {
 }
 
 function beforeRun() {
-    // 判断是否从主页开始
-    while (true){
-        if (check_state() == 1){
-            // toastLog("即将开始比赛");
-            break;
-        }
-        // else toastLog("isHome ?= " + check_state());
-    }
-
     // 点击生涯
     robot.click(profile.goldenPoint.x, profile.goldenPoint.y);
     robot.click(profile.goldenPoint.x, profile.goldenPoint.y);
@@ -279,21 +341,18 @@ function beforeRun() {
 function deviceInfo() {
     auto();
     if (!requestScreenCapture()) {
-        toastLog('请求截图失败，程序结束');
+        toast('请求截图失败，程序结束');
         exit();
     }
     enablePowerSave(true);
 }
 
-function loop(counter_loop) {
-
-    // 选择关卡
-    chooseMode(counter_loop);
-    sleep(2000);
+function main() {
+    // 选择模式
+    chooseMode();
 
     // 选车
     chooseCar();
-    sleep(2000);
 
     sleep(2000);
     // 开始
@@ -306,60 +365,10 @@ function loop(counter_loop) {
     });
 
     // 跑完之后
-    afterRun(counter_loop);
+    afterRun();
 }
 
-function afterRun(counter_loop) {
-    sleep(69000);
-    toastLog(++counter_loop + "场比赛已完成");
-
-    var counter_next = 0;
-    // 完成三次结算
-    while (counter_next <= 3) {
-        if (check_state() == 5) {
-            robot.click(profile.goldenPoint.x, profile.goldenPoint.y);
-            sleep(1500);
-            counter_next++;
-        }
-        // 若未跑完仍可点击氮气
-        else {
-            robot.click(height * 4 / 5, width / 2);
-            sleep(500);
-            // toastLog("isNext ?= " + check_state());
-        }
-    }
-    
-    // sleep(4000);
-    
-    var counter_euro = 0;
-    while (counter_euro < 10) {
-        // 三次结算之后的状态
-        switch(check_state()) {
-            // Euro
-            case 3:{
-                counter_euro++;
-                break;
-            }
-            // 少点了继续
-            case 5:
-                robot.click(profile.goldenPoint.x, profile.goldenPoint.y);
-                break;
-            // 升级
-            case 7:{
-                robot.click(profile.upgrade.x, profile.upgrade.y);
-                toastLog("升级");
-                sleep(3000);
-                break;
-            }
-            // default:
-            //    toastLog("is Euro ?= "+ check_state());
-        }
-        sleep(200);
-    }
-    toastLog("即将开始下一场比赛");
-}
-
-/* function afterRun() {
+function afterRun() {
     sleep(69000);
     toast("跑完了");
 
@@ -413,10 +422,10 @@ function afterRun(counter_loop) {
         var leftdown = images.pixel(img, checkForResolution(height / 8, width * 3 / 4, img).positionX, checkForResolution(height / 8, width * 3 / 4, img).positionY);
         var rightdown = images.pixel(img, checkForResolution(height * 7 / 8, width * 3 / 4, img).positionX, checkForResolution(height * 7 / 8, width * 3 / 4, img).positionY);
 
-        var AD1 = _color_equal(leftup, "#ff080906");
-        var AD2 = _color_equal(rightup, "#ff080906");
-        var AD3 = _color_equal(leftdown, "#ff080906");
-        var AD4 = _color_equal(rightdown, "#ff080906");
+        var AD1 = color_equal(leftup, "#ff080906");
+        var AD2 = color_equal(rightup, "#ff080906");
+        var AD3 = color_equal(leftdown, "#ff080906");
+        var AD4 = color_equal(rightdown, "#ff080906");
 
         if (AD1 && AD2 && AD3 && AD4) {
             robot.back();
@@ -425,14 +434,12 @@ function afterRun(counter_loop) {
     }
 }
 
-
-function _color_equal(color1, color2) {
+function color_equal(color1, color2) {
     if (colors.equals(color1, color2))
         return 1;
     else
         return 0;
 }
-*/
 
 function run() {
     // 在新线程执行的代码
@@ -448,23 +455,12 @@ function run() {
     }, 1000);
 }
 
+
 /**
- * 选择关卡
+ * 选择模式
  */
-function chooseMode(counter_loop) {
-    if (!counter_loop){
-        while (true){
-            if (check_state() == 3){
-                toast("选择关卡");
-                break;
-            }
-            else {
-                // toastLog("isEuro ?= " + check_state());
-                sleep(200);
-            }
-        }
-    }
-    
+function chooseMode() {
+    toast("选择模式");
     sleep(700);
     // 向↓滑动,选关
     // for (i = 0; i < 4; i++) {
@@ -481,6 +477,7 @@ function chooseMode(counter_loop) {
 
     // 继续
     robot.click(profile.goldenPoint.x, profile.goldenPoint.y);
+    sleep(2000);
 }
 /**
  * 选车
@@ -509,9 +506,9 @@ function checkForResolution(x, y, img) {
     var width = img.getWidth();
     var height = img.getHeight();
     if (width < height) {
-        var temp = x;
+        var e = x;
         x = y;
-        y = temp;
+        y = e;
     }
 
     return {
@@ -584,35 +581,4 @@ function Robot() {
     this.back = function () {
         return this.robot.back();
     };
-}
-
-function check_state() {
-    var img = captureScreen();
-    
-    // 若干点的颜色值
-    var token = images.pixel(img, profile.token.x, profile.token.y);
-    var credit = images.pixel(img, profile.credit.x, profile.credit.y);
-    var goldenPoint = images.pixel(img, profile.goldenPoint.x, profile.goldenPoint.y);
-    var recommendedPoints = images.pixel(img, profile.recommendedPoints.x, profile.recommendedPoints.y);
-    var upgrade = images.pixel(img, profile.upgrade.x, profile.upgrade.y);
-
-    // 1 主页
-    if (!colors.equals(goldenPoint, "#c3fb12") && colors.equals(token, "#0090ff") && colors.equals(credit, "#ffc600"))
-        return 1;
-    // 3 EURO
-    if (/*colors.equals(goldenPoint, "#c3fb12") && colors.equals(token, "#0090ff") && colors.equals(credit, "#ffc600") &&*/ (colors.equals(recommendedPoints, "#c3fc0f") || colors.equals(credit, "#ff0054")))
-        return 3;
-    // 5 结算
-    if (colors.equals(goldenPoint, "#c3fb12") && !(colors.equals(recommendedPoints, "#c3fb12") || colors.equals(recommendedPoints, "#ff0054")))
-        return 5;
-    // 7 升级
-    if (colors.equals(upgrade, "#ffffff"))
-        return 7;
-    /*
-    toastLog("goldenPoint is " + colors.toString(goldenPoint));
-    toastLog("token is " + colors.toString(token));
-    toastLog("credit is " + colors.toString(credit));
-    toastLog("recommendedPoints is " + colors.toString(recommendedPoints));
-    */
-    return -1;
 }
